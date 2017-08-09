@@ -62,8 +62,8 @@ int main(void) {
 
 #define MAXVAL 100
 
-int sp = 0;
-double val[MAXVAL];
+int sp = 0; //Points to free position
+double val[MAXVAL]; //Stack
 
 void push(double f) {
 	if(sp < MAXVAL)
