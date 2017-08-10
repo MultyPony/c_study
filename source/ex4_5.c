@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <math.h>
+#include <string.h>
 
 #define MAXOP 100
 #define NUMBER '0'
@@ -211,4 +212,15 @@ void stats(void) {
 	printf("num_counter == %d\n"
 			"sp == %d\n"
 			"bufp == %d\n",num_counter,sp,bufp);
+}
+
+void ungets(char s[]) {
+	int length = strlen(s);
+	if(length > BUFSIZE) {
+		printf("String is too long\n");
+		return;
+	}
+	for(int i = 0;i < length;++i) {
+		ungetch(s[i]);
+	}
 }
